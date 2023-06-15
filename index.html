@@ -27,10 +27,53 @@
   </body>
 </head>
     <h1 class="center">Prayut Kata!</h1>
-  </p>ไทยสร้างตู่<p>
+  </p>ไทยสร้างตู่ โกงทุกดอกแล้วบอกโปร่งใส<p>
   <div>ทกสอบการสร้างเว็ปด้วย HTML</div>
   <img src="CoverN-Apr23_104.jpg" width="50%" height="50%">
   <herf herf ="https://rain125432.github.io/web-demo/" target="_blank"><button>TU</button></herf>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="input1">
+    <input type="number" id="input2">
+    <input type="number" id="input3">
+    <button onclick="calculate()">Submit</button>
+
+    <p id="maxResult"></p>
+    <p id="minResult"></p>
+    <p id="avgResult"></p>
+    <script>
+        function calculate() {
+            var input1 = parseInt(document.getElementById('input1').value);
+            var input2 = parseInt(document.getElementById('input2').value);
+            var input3 = parseInt(document.getElementById('input3').value);
+
+            
+            var values = [input1, input2, input3];
+
+            
+            var max = Math.max.apply(null, values);
+            var min = Math.min.apply(null, values);
+            var sum = values.reduce(function(a, b) {
+                return a + b;
+            }, 0);
+            var avg = sum / values.length;
+
+            
+            document.getElementById('maxResult').textContent = 'Max: ' + max;
+            document.getElementById('minResult').textContent = 'Min: ' + min;
+            document.getElementById('avgResult').textContent = 'Avg: ' + avg;
+        }
+
+    </script>
+</body>
+</html>
   <p></p>
   </body>
 </html>
