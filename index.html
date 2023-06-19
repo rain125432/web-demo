@@ -31,112 +31,111 @@
   <div>ทกสอบการสร้างเว็ปด้วย HTML</div>
   <img src="CoverN-Apr23_104.jpg" width="50%" height="50%">
   <herf herf ="https://rain125432.github.io/web-demo/" target="_blank"><button></button></herf>
-  <div class="center"><button type="button" onclick="document.getElementById('header').style.color='black'">เปลี่ยนสี</button></div>
+  <div class="center"><button type="button" onclick="document.getElementById('header').style.color='red'">เปลี่ยนสี</button></div>
 
-    <div class="center">
-        <button onclick="document.getElementById('myImage').src='images/Idle.png'">แมวยืน</button>
-        <img id="myImage" src="images/Idle.png" width="200px">    
-        <button onclick="document.getElementById('myImage').src='images/Slide.png'">แมวสไลด์</button>
-    </div>
-       
+  <div class="center">
+      <button onclick="document.getElementById('myImage').src='images/Idle.png'">แมวยืน</button>
+      <img id="myImage" src="images/Idle.png" width="200px">    
+      <button onclick="document.getElementById('myImage').src='images/Slide.png'">แมวสไลด์</button>
+  </div>
+     
+  <p>ไทยสร้างตู่ โกงทุกดอกแล้วบอกโปร่งใส</p>
+  <div>ทดสอบการสร้างเว็บด้วย HTML</div>
+  <h1>วันที่และเวลาปัจจุบัน</h1>
+  <div id="datetime"></div>
+
 <script>
-  function updateDateTime() {
-    var thaiDays = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"];
-    var thaiMonths = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
-    var date = new Date();
-    var day = thaiDays[date.getDay()];
-    var month = thaiMonths[date.getMonth()];
-    var thaiDate = date.getDate();
-    var thaiYear = date.getFullYear() + 543;
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
+function updateDateTime() {
+  var thaiDays = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"];
+  var thaiMonths = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+  var date = new Date();
+  var day = thaiDays[date.getDay()];
+  var month = thaiMonths[date.getMonth()];
+  var thaiDate = date.getDate();
+  var thaiYear = date.getFullYear() + 543;
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
 
-    var datetimeElement = document.getElementById("datetime");
-    datetimeElement.innerHTML = thaiDate + " " + month  + " " + thaiYear + "  " + hours + ":" + minutes + ":" + seconds;
+  var datetimeElement = document.getElementById("datetime");
+  datetimeElement.innerHTML = thaiDate + " " + month  + " " + thaiYear + "  " + hours + ":" + minutes + ":" + seconds;
 
-    setTimeout(updateDateTime, 1000); // อัปเดตเวลาทุกๆ 1 วินาที
-  }
+  setTimeout(updateDateTime, 1000); // อัปเดตเวลาทุกๆ 1 วินาที
+}
 
-  updateDateTime(); // เรียกฟังก์ชันเพื่อเริ่มการอัปเดตเวลา
+updateDateTime(); // เรียกฟังก์ชันเพื่อเริ่มการอัปเดตเวลา
 </script>
-    <h1>ตารางสินค้า</h1>
-    <script>
-      function showTable() {
-        document.getElementById("myTable").style.display = "table";
-        document.getElementById("showTableBtn").style.display = "show";
-        document.getElementById("hideTableBtn").style.display = "inline-block";
-      }
-    
-      function hideTable() {
-        document.getElementById("myTable").style.display = "none";
-        document.getElementById("showTableBtn").style.display = "inline-block";
-        document.getElementById("hideTableBtn").style.display = "show";
-      }
-    </script>
-    <h2>
-      <button id="showTableBtn" onclick="showTable()">แสดงตาราง</button>
-      <button  class="button" id="hideTableBtn" onclick="hideTable()">ซ่อนตาราง</button>
-    </h2>
-    <table id="myTable" style="display: none;">
-    <thead>
-      <tr>
-        <th>รายการที่ 1</th>
-        <th>รายการที่ 2</th>
-        <th>รายการที่ 3</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>8</td>
-       <td>16</td>
-       <td>32</td>
-      </tr>
-      <tr>
-        <td>64</td>
-        <td>128</td>
-        <td>256</td>
-      </tr>
-    </tbody>
-    </table>
-  <h1>ค่าเฉลี่ย ค่าสูงสุด และค่าต่ำสุด</h1>
-    <script>
-      function calculateStats() {
-        var input1 = parseFloat(document.getElementById('input1').value);
-        var input2 = parseFloat(document.getElementById('input2').value);
-        var input3 = parseFloat(document.getElementById('input3').value);
+  <h1>ตารางสินค้า</h1>
+  <script>
+    function showTable() {
+      document.getElementById("myTable").style.display = "table";
+      document.getElementById("showTableBtn").style.display = "show";
+      document.getElementById("hideTableBtn").style.display = "inline-block";
+    }
   
-        var average = (input1 + input2 + input3) / 3;
-        var max = Math.max(input1, input2, input3);
-        var min = Math.min(input1, input2, input3);
-  
-        document.getElementById('average').innerText = 'ค่าเฉลี่ย: ' + average.toFixed(2);
-        document.getElementById('max').innerText = 'ค่าสูงสุด: ' + max;
-        document.getElementById('min').innerText = 'ค่าต่ำสุด: ' + min;
-      }
-    </script>
-   
-  <h3>Number #1:</h3>
-  <label for="input1"></label>
-  <input type="number" id="input1"><br>
-  <h3>Number #2:</h3>
-  <label for="input2"></label>
-  <input type="number" id="input2"><br>
-  <h3>Number #3:</h3>
-  <label for="input3"></label>
-  <input type="number" id="input3"><br>
+    function hideTable() {
+      document.getElementById("myTable").style.display = "none";
+      document.getElementById("showTableBtn").style.display = "inline-block";
+      document.getElementById("hideTableBtn").style.display = "show";
+    }
+  </script>
+  <h2>
+    <button id="showTableBtn" onclick="showTable()">แสดงตาราง</button>
+    <button  class="button" id="hideTableBtn" onclick="hideTable()">ซ่อนตาราง</button>
+  </h2>
+  <table id="myTable" style="display: none;">
+  <thead>
+    <tr>
+      <th>รายการที่ 1</th>
+      <th>รายการที่ 2</th>
+      <th>รายการที่ 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>8</td>
+     <td>16</td>
+     <td>32</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>128</td>
+      <td>256</td>
+    </tr>
+  </tbody>
+  </table>
+<h1>ค่าเฉลี่ย ค่าสูงสุด และค่าต่ำสุด</h1>
+  <script>
+    function calculateStats() {
+      var input1 = parseFloat(document.getElementById('input1').value);
+      var input2 = parseFloat(document.getElementById('input2').value);
+      var input3 = parseFloat(document.getElementById('input3').value);
 
-  <button onclick="calculateStats()">Submit</button><br>
+      var average = (input1 + input2 + input3) / 3;
+      var max = Math.max(input1, input2, input3);
+      var min = Math.min(input1, input2, input3);
 
-  <div id="average"></div>
-  <div id="max"></div>
-  <div id="min"></div>
-  </body>
-</html>
+      document.getElementById('average').innerText = 'ค่าเฉลี่ย: ' + average.toFixed(2);
+      document.getElementById('max').innerText = 'ค่าสูงสุด: ' + max;
+      document.getElementById('min').innerText = 'ค่าต่ำสุด: ' + min;
+    }
+  </script>
+ 
+<h3>Number #1:</h3>
+<label for="input1"></label>
+<input type="number" id="input1"><br>
+<h3>Number #2:</h3>
+<label for="input2"></label>
+<input type="number" id="input2"><br>
+<h3>Number #3:</h3>
+<label for="input3"></label>
+<input type="number" id="input3"><br>
 
-    </script>
+<button onclick="calculateStats()">Submit</button><br>
+
+<div id="average"></div>
+<div id="max"></div>
+<div id="min"></div>
 </body>
 </html>
-  <p></p>
-  </body>
-</html>
+    
